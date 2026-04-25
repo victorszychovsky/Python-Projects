@@ -7,6 +7,21 @@ def pobierz_liczbe(prompt):
         except ValueError:
             print("Nieprawidłowa liczba. Spróbuj ponownie.")
 
+def pobierz_pole(komunikat):
+    """Pobiera od użytkownika liczbę całkowitą z zakresu 1-9."""
+    while True:
+        try:
+            wybor = int(input(komunikat)) # Od razu int, bez float
+            
+            # Sprawdzamy, czy liczba mieści się na planszy
+            if 1 <= wybor <= 9:
+                return wybor
+            else:
+                print("Błąd: Wybierz liczbę z zakresu od 1 do 9!")
+                
+        except ValueError:
+            print("Błąd: To nie jest liczba! Wpisz cyfrę od 1 do 9.")
+
 class TicTacToe:
     def __init__(self):
         self.user_sign = 'O'
